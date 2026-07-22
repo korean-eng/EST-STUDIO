@@ -8,8 +8,8 @@
 <meta http-equiv="Pragma" content="no-cache">
 <meta http-equiv="Expires" content="0">
 <meta property="og:title" content="＜먹여 키운 것＞ EST STUDIO 펀딩">
-<meta property="og:description" content="영화는 끝나도 당신의 이름은 스크린에 남습니다.">
-<meta property="og:image" content="poster.jpg">
+<meta property="og:description" content="여러분의 이름은 엔딩 크레딧에 함께 기록됩니다.">
+<meta property="og:image" content="poster.png">
 <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@500;700&family=Nanum+Myeongjo:wght@400;700;800&family=Noto+Sans+KR:wght@300;400;500;700&display=swap" rel="stylesheet">
 <style>
   :root{
@@ -22,7 +22,7 @@
   body{
     color:var(--txt);font-family:"Noto Sans KR",sans-serif;font-weight:300;
     line-height:1.75;overflow-x:hidden;
-    background:#0a0605 url("bg.jpg?v=2") center top / cover no-repeat fixed;
+    background:#0a0605 url("bg.png?v=3") center top / cover no-repeat fixed;
   }
   body::before{
     content:"";position:fixed;inset:0;z-index:-1;
@@ -31,6 +31,7 @@
   img{display:block;width:100%;height:auto;}
   .wrap{max-width:620px;margin:0 auto;}
   section{padding:70px 22px;border-bottom:1px solid var(--line);}
+  .plain{padding:0;border-bottom:1px solid var(--line);}
   .eyebrow{font-family:"Cinzel",serif;font-size:11px;letter-spacing:.42em;color:var(--red-hot);text-transform:uppercase;margin-bottom:14px;}
   h2{font-family:"Nanum Myeongjo",serif;font-weight:800;font-size:27px;line-height:1.4;margin-bottom:10px;text-shadow:0 2px 18px rgba(0,0,0,.8);}
   h2 .en{font-family:"Cinzel",serif;color:var(--red-hot);display:block;font-size:19px;letter-spacing:.16em;margin-top:6px;}
@@ -78,12 +79,6 @@
   .credit-box .names{font-family:"Nanum Myeongjo",serif;font-size:17px;line-height:2.3;color:#8a7b77;}
   .credit-box .me{color:#fff;font-weight:700;font-size:20px;text-shadow:0 0 22px rgba(255,60,80,.7);}
 
-  .steps{list-style:none;}
-  .steps li{position:relative;padding:0 0 26px 30px;border-left:1px solid var(--line);color:var(--mute);font-size:15px;}
-  .steps li:last-child{border-left-color:transparent;padding-bottom:0;}
-  .steps li::before{content:"";position:absolute;left:-5px;top:7px;width:9px;height:9px;border-radius:50%;background:var(--red-dim);border:1px solid var(--red-hot);}
-  .steps li b{display:block;color:var(--txt);font-family:"Nanum Myeongjo",serif;font-size:16px;font-weight:700;}
-
   .acct{padding:22px 20px;margin-bottom:14px;}
   .acct .bank{font-size:13px;color:var(--mute);letter-spacing:.08em;}
   .acct .no{font-family:"Cinzel",serif;font-size:25px;font-weight:700;color:#fff;margin:8px 0 4px;word-break:break-all;letter-spacing:.02em;}
@@ -91,20 +86,22 @@
   .note{font-size:13px;color:var(--mute);margin-top:16px;line-height:1.9;}
   .note b{color:var(--red-hot);font-weight:500;}
 
+  /* ── 엔딩 크레딧: 이미지 속 [YOUR NAME] 자리에 실제 이름 ── */
   .ending{position:relative;padding:0;border:none;background:#000;cursor:pointer;overflow:hidden;}
-  .ending img{opacity:.85;}
-  .name-slot{position:absolute;left:0;right:0;top:42%;text-align:center;padding:0 22px;}
-  .name-slot .sp{font-family:"Cinzel",serif;font-size:11px;letter-spacing:.46em;color:#8a7a76;margin-bottom:14px;opacity:0;}
+  .ending img{opacity:.9;}
+  .mask{
+    position:absolute;left:0;right:0;top:49.5%;height:9%;
+    background:radial-gradient(ellipse at center,#050203 55%,rgba(5,2,3,0) 100%);
+  }
+  .name-slot{position:absolute;left:0;right:0;top:51%;text-align:center;padding:0 22px;}
   .name-slot .nm{
     font-family:"Nanum Myeongjo",serif;font-weight:800;
-    font-size:clamp(28px,8vw,44px);color:#fff;word-break:keep-all;
+    font-size:clamp(24px,6.2vw,36px);color:#fff;word-break:keep-all;
     opacity:0;filter:blur(8px);letter-spacing:.35em;
-    text-shadow:0 0 34px rgba(255,255,255,.4),0 0 70px rgba(200,16,46,.55);
+    text-shadow:0 0 30px rgba(255,255,255,.45),0 0 64px rgba(200,16,46,.5);
   }
-  .play .sp{animation:fadeIn .4s ease-out .05s forwards;}
-  .play .nm{animation:emerge .75s cubic-bezier(.2,.75,.3,1) .2s forwards;}
-  @keyframes fadeIn{to{opacity:1;}}
-  @keyframes emerge{0%{opacity:0;filter:blur(8px);letter-spacing:.35em;}100%{opacity:1;filter:blur(0);letter-spacing:.04em;}}
+  .play .nm{animation:emerge .75s cubic-bezier(.2,.75,.3,1) .15s forwards;}
+  @keyframes emerge{0%{opacity:0;filter:blur(8px);letter-spacing:.35em;}100%{opacity:1;filter:blur(0);letter-spacing:.06em;}}
   .replay{position:absolute;bottom:16px;left:0;right:0;text-align:center;font-family:"Cinzel",serif;font-size:10px;letter-spacing:.3em;color:#5a4a47;}
 
   .end-msg{padding:56px 22px 40px;text-align:center;border-bottom:1px solid var(--line);}
@@ -120,37 +117,33 @@
 <body>
 <div class="wrap">
 
+  <!-- HERO -->
   <header class="hero">
-    <img src="poster.jpg?v=2" alt="먹여 키운 것">
+    <img src="poster.png?v=3" alt="먹여 키운 것">
     <div class="hero-cap">
       <div class="studio">EST STUDIO PRESENTS</div>
       <h1>먹여 키운 것</h1>
       <div class="sub">OFFICIAL REWARD CLAIM</div>
-      <p>영화 제작에 함께해주셔서 감사합니다.</p>
+      <p>영화를 완성하기 위한 첫 번째 후원을 시작합니다.</p>
       <a class="btn" href="#claim">리워드 신청하기</a>
     </div>
   </header>
 
-  <section>
-    <div class="eyebrow">Support the film</div>
-    <h2>작은 후원이<br>한 편의 영화를 완성합니다<span class="en">The Hunger Below</span></h2>
-    <p class="lead">여러분의 후원은 촬영 장비 대여, 소품 제작, 세트장 대관 등<br>〈먹여 키운 것〉의 제작비로만 사용됩니다.</p>
-    <img class="shot" src="support.jpg?v=2" alt="연출의 말">
-  </section>
+  <!-- SUPPORT -->
+  <div class="plain"><img src="support.png?v=3" alt="SUPPORT THE FILM"></div>
+
+  <!-- CASTING -->
+  <div class="plain"><img src="casting.png?v=3" alt="CASTING"></div>
+
+  <!-- KEY STAFF -->
+  <div class="plain"><img src="staff.png?v=3" alt="KEY STAFF"></div>
+
+  <!-- REWARD -->
+  <div class="plain"><img src="reward.png?v=3" alt="FUNDING REWARD"></div>
 
   <section>
-    <div class="eyebrow">Key staff</div>
-    <h2>청덕괴담회 제작팀<br>전격 합류</h2>
-    <img class="shot" src="staff.jpg?v=2" alt="KEY STAFF" style="margin-top:24px">
-  </section>
-
-  <section>
-    <div class="eyebrow">Chapter 01</div>
-    <h2>FUNDING REWARD</h2>
-    <p class="lead">상위 리워드에는 해당 금액 이하의 모든 리워드가 포함됩니다.</p>
-    <img class="shot" src="reward.jpg?v=2" alt="리워드 안내">
-    <div class="eyebrow" style="margin-top:8px">Select your tier</div>
-    <h2 style="font-size:21px;margin-bottom:20px">후원 금액을 선택하면<br>받으실 리워드가 표시됩니다</h2>
+    <div class="eyebrow">Select your tier</div>
+    <h2 style="font-size:22px;margin-bottom:22px">후원 금액을 선택하면<br>받으실 리워드가 표시됩니다</h2>
     <div class="tiers" id="tiers"></div>
     <div class="result panel">
       <div class="head" id="resultHead">YOUR REWARD</div>
@@ -158,36 +151,27 @@
     </div>
   </section>
 
+  <!-- 엔딩 크레딧 미리보기 -->
   <section>
     <div class="eyebrow">Ending credit</div>
     <h2>당신의 이름이<br>스크린에 남습니다</h2>
     <p class="lead">엔딩 크레딧에 표기될 이름을 입력해보세요. (닉네임 · 익명 가능)</p>
     <input class="input" id="nameIn" type="text" maxlength="20" placeholder="예) 문에녹 / MOON / 익명">
     <div class="credit-box">
-      <div class="t">SPECIAL THANKS</div>
+      <div class="t">제작 투자</div>
       <div class="names">
-        김단하<br>정지환<br>
-        <span class="me" id="creditMe">YOUR NAME</span><br>
-        EST STUDIO
+        <span class="me" id="creditMe">YOUR NAME</span>
       </div>
     </div>
   </section>
 
-  <section>
-    <div class="eyebrow">Process</div>
-    <h2>진행 절차</h2>
-    <ul class="steps" style="margin-top:26px">
-      <li><b>01 · 후원 접수</b>신청 폼 작성 완료</li>
-      <li><b>02 · 입금 확인</b>영업일 기준 1~2일 내 확인</li>
-      <li><b>03 · 리워드 제작</b>포토카드 · 영상 제작</li>
-      <li><b>04 · 배송 준비</b>굿즈 포장 및 발송 준비</li>
-      <li><b>05 · 배송 완료</b>등록해주신 주소로 발송</li>
-    </ul>
-  </section>
+  <!-- HOW TO SUPPORT -->
+  <div class="plain"><img src="howto.png?v=3" alt="HOW TO SUPPORT"></div>
 
+  <!-- 계좌 + 폼 -->
   <section id="claim">
-    <div class="eyebrow">How to support</div>
-    <h2>후원 방법</h2>
+    <div class="eyebrow">Account</div>
+    <h2>후원 계좌</h2>
     <p class="lead">아래 계좌로 입금하신 뒤, 신청 폼을 작성해주세요.</p>
     <div class="acct panel">
       <div class="bank" id="vBank">은행</div>
@@ -198,26 +182,26 @@
     <p class="note">
       · 입금자명은 <b>신청자 성함과 동일하게</b> 부탁드립니다.<br>
       · 입금 후 반드시 아래 신청 폼을 작성해주셔야 리워드가 발송됩니다.<br>
-      · 폼 작성에는 <b>구글 로그인</b>이 필요합니다.
+      · 폼 작성에는 <b>구글 로그인</b>이 필요합니다.<br>
+      · 리워드 발송은 <b>8월 20일 이후</b> 제작 일정에 맞추어 순차 발송됩니다.
     </p>
     <a class="btn" id="formBtn" href="#" target="_blank" rel="noopener" style="margin-top:24px">
       리워드 신청 폼 작성하기 →
     </a>
   </section>
 
+  <!-- 엔딩 크레딧 연출 -->
   <div class="ending" id="ending">
-    <img src="credit.jpg?v=2" alt="">
-    <div class="name-slot">
-      <div class="sp">SPECIAL THANKS</div>
-      <div class="nm" id="endName">YOUR NAME</div>
-    </div>
+    <img src="credit.png?v=3" alt="">
+    <div class="mask"></div>
+    <div class="name-slot"><div class="nm" id="endName">[ YOUR NAME ]</div></div>
     <div class="replay">TAP TO REPLAY</div>
   </div>
 
   <div class="end-msg">
     <div class="th">THANK YOU</div>
-    <p>당신의 이름은 〈먹여 키운 것〉의<br>엔딩 크레딧에 기록됩니다.</p>
-    <p class="fest">〈먹여 키운 것〉은 2027년 영화제 출품에<br>도전할 예정입니다.</p>
+    <p>여러분의 이름은 〈먹여 키운 것〉<br>엔딩 크레딧에 함께 기록됩니다.</p>
+    <p class="fest">〈먹여 키운 것〉은 2027년도 영화제 출품 준비 작품으로<br>2027년 공개 예정입니다.</p>
   </div>
   <footer>EST STUDIO · 먹여 키운 것</footer>
 
@@ -234,12 +218,11 @@ const HOLDER   = "문에녹";
 /* ═══════════════════════════════════════ */
 
 const TIERS=[
-  {amt:3000, en:"SUPPORTER",       star:1, items:["엔딩크레딧 이름 등재"]},
-  {amt:5000, en:"COLLECTER",       star:2, items:["스틸컷 포토카드 1장","캐릭터 포토카드 1장"]},
-  {amt:10000,en:"MESSAGE VIDEO",   star:3, items:["출연진 축하 영상"]},
+  {amt:5000, en:"COLLECTER",       star:2, items:["엔딩크레딧 이름 등재"]},
+  {amt:10000,en:"MESSAGE VIDEO",   star:3, items:["스틸컷 포토카드 1장","캐릭터 포토카드 1장","출연진 축하 영상"]},
   {amt:20000,en:"SPECIAL",         star:4, items:["배우 정지환 & 김단하 영상통화","엽서 1장"]},
-  {amt:30000,en:"THANK YOU VIDEO", star:5, items:["전 제작팀 감사영상","A3 포스터 2장"]},
-  {amt:50000,en:"LIMITED EDITION", star:6, items:["대본집","실제 촬영 소품","원하는 스탭의 손편지"]}
+  {amt:30000,en:"THANK YOU VIDEO", star:5, items:["A3 포스터 2장"]},
+  {amt:50000,en:"LIMITED EDITION", star:6, items:["대본집","원하는 키스탭 손편지"]}
 ];
 
 document.getElementById('vBank').textContent=BANK;
@@ -270,7 +253,7 @@ const nameIn=document.getElementById('nameIn');
 nameIn.addEventListener('input',()=>{
   const v=nameIn.value.trim();
   document.getElementById('creditMe').textContent = v==="" ? "YOUR NAME" : v;
-  document.getElementById('endName').textContent  = v==="" ? "YOUR NAME" : v;
+  document.getElementById('endName').textContent  = v==="" ? "[ YOUR NAME ]" : v;
 });
 
 const ending=document.getElementById('ending');
