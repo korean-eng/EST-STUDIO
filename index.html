@@ -1,0 +1,310 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>먹여 키운 것 · EST STUDIO OFFICIAL FUNDING</title>
+<meta property="og:title" content="＜먹여 키운 것＞ EST STUDIO 펀딩">
+<meta property="og:description" content="영화는 끝나도 당신의 이름은 스크린에 남습니다.">
+<meta property="og:image" content="poster.jpg">
+<link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@500;700&family=Nanum+Myeongjo:wght@400;700;800&family=Noto+Sans+KR:wght@300;400;500;700&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --bg:#080607; --panel:#100c0d; --line:#2a1c1e;
+    --red:#C8102E; --red-hot:#FF1F35; --red-dim:#7a0d1c;
+    --txt:#E9E1DE; --mute:#8B7A76;
+  }
+  *{box-sizing:border-box;margin:0;padding:0;-webkit-tap-highlight-color:transparent;}
+  html{scroll-behavior:smooth;}
+  body{background:var(--bg);color:var(--txt);font-family:"Noto Sans KR",sans-serif;font-weight:300;line-height:1.75;overflow-x:hidden;}
+  img{display:block;width:100%;height:auto;}
+  .wrap{max-width:620px;margin:0 auto;}
+  section{padding:70px 22px;border-bottom:1px solid var(--line);}
+  .eyebrow{font-family:"Cinzel",serif;font-size:11px;letter-spacing:.42em;color:var(--red);text-transform:uppercase;margin-bottom:14px;}
+  h2{font-family:"Nanum Myeongjo",serif;font-weight:800;font-size:27px;line-height:1.4;margin-bottom:10px;}
+  h2 .en{font-family:"Cinzel",serif;color:var(--red);display:block;font-size:19px;letter-spacing:.16em;margin-top:6px;}
+  .lead{color:var(--mute);font-size:15px;margin-bottom:30px;}
+
+  .hero{position:relative;padding:0;border:none;}
+  .hero img{opacity:.92;}
+  .hero::after{content:"";position:absolute;inset:0;background:linear-gradient(180deg,rgba(8,6,7,.55) 0%,rgba(8,6,7,0) 30%,rgba(8,6,7,.75) 82%,var(--bg) 100%);}
+  .hero-cap{position:relative;z-index:2;margin-top:-92px;padding:0 22px 54px;text-align:center;}
+  .hero-cap .studio{font-family:"Cinzel",serif;font-size:11px;letter-spacing:.44em;color:var(--mute);}
+  .hero-cap h1{font-family:"Nanum Myeongjo",serif;font-weight:800;font-size:34px;margin:12px 0 6px;text-shadow:0 4px 30px #000;}
+  .hero-cap .sub{font-family:"Cinzel",serif;font-size:12px;letter-spacing:.3em;color:var(--red);}
+  .hero-cap p{color:var(--mute);font-size:14px;margin:18px 0 26px;}
+
+  .btn{display:block;width:100%;text-align:center;cursor:pointer;font-family:"Nanum Myeongjo",serif;font-weight:700;font-size:17px;padding:17px 20px;border-radius:3px;text-decoration:none;background:linear-gradient(180deg,var(--red),var(--red-dim));color:#fff;border:1px solid #a0142a;box-shadow:0 10px 34px -12px rgba(200,16,46,.85);transition:.18s;}
+  .btn:active{transform:translateY(1px);}
+  .btn.ghost{background:transparent;border:1px solid var(--line);color:var(--txt);box-shadow:none;}
+  .btn+.btn{margin-top:11px;}
+  .shot{border:1px solid var(--line);margin-bottom:26px;}
+
+  .tiers{display:flex;flex-direction:column;gap:9px;margin-bottom:26px;}
+  .tier{display:flex;align-items:center;gap:14px;cursor:pointer;background:var(--panel);border:1px solid var(--line);border-left:3px solid var(--line);padding:15px 16px;transition:.18s;}
+  .tier .amt{font-family:"Cinzel",serif;font-size:19px;font-weight:700;min-width:78px;}
+  .tier .amt small{font-family:"Noto Sans KR";font-size:11px;font-weight:300;color:var(--mute);margin-left:2px;}
+  .tier .en{font-family:"Cinzel",serif;font-size:13px;letter-spacing:.09em;color:var(--mute);flex:1;}
+  .tier .st{font-size:10px;color:#5a4a48;letter-spacing:1px;}
+  .tier.on{border-color:var(--red);border-left-color:var(--red-hot);background:#190a0d;}
+  .tier.on .en{color:var(--red-hot);}
+  .tier.on .st{color:#e6b13a;}
+
+  .result{background:var(--panel);border:1px solid var(--line);padding:24px 20px;}
+  .result .head{font-family:"Cinzel",serif;font-size:12px;letter-spacing:.3em;color:var(--red);padding-bottom:12px;border-bottom:1px solid var(--line);margin-bottom:16px;}
+  .result ul{list-style:none;}
+  .result li{padding:9px 0 9px 28px;position:relative;font-size:15px;border-bottom:1px dashed #241819;}
+  .result li:last-child{border-bottom:none;}
+  .result li::before{content:"✓";position:absolute;left:4px;top:9px;color:var(--red-hot);font-size:13px;}
+  .empty{color:#5a4a48;font-size:14px;text-align:center;padding:26px 0;}
+
+  .input{width:100%;background:#0d0a0b;border:1px solid var(--line);color:var(--txt);font-family:"Noto Sans KR";font-size:16px;padding:14px 15px;outline:none;border-radius:2px;}
+  .input:focus{border-color:var(--red);}
+  .credit-box{background:#000;border:1px solid var(--line);padding:44px 20px;text-align:center;margin-top:18px;}
+  .credit-box .t{font-family:"Cinzel",serif;font-size:12px;letter-spacing:.42em;color:var(--mute);margin-bottom:22px;}
+  .credit-box .names{font-family:"Nanum Myeongjo",serif;font-size:17px;line-height:2.3;color:#6f6360;}
+  .credit-box .me{color:#fff;font-weight:700;font-size:20px;text-shadow:0 0 22px rgba(255,60,80,.6);}
+
+  .steps{list-style:none;}
+  .steps li{position:relative;padding:0 0 26px 30px;border-left:1px solid var(--line);color:var(--mute);font-size:15px;}
+  .steps li:last-child{border-left-color:transparent;padding-bottom:0;}
+  .steps li::before{content:"";position:absolute;left:-5px;top:7px;width:9px;height:9px;border-radius:50%;background:var(--red-dim);border:1px solid var(--red);}
+  .steps li b{display:block;color:var(--txt);font-family:"Nanum Myeongjo",serif;font-size:16px;font-weight:700;}
+
+  .acct{background:var(--panel);border:1px solid var(--line);padding:22px 20px;margin-bottom:14px;}
+  .acct .bank{font-size:13px;color:var(--mute);letter-spacing:.08em;}
+  .acct .no{font-family:"Cinzel",serif;font-size:23px;font-weight:700;color:#fff;margin:8px 0 4px;word-break:break-all;}
+  .acct .holder{font-size:13px;color:var(--mute);}
+  .note{font-size:13px;color:var(--mute);margin-top:16px;line-height:1.9;}
+  .note b{color:var(--red-hot);font-weight:500;}
+
+  /* ── 엔딩 크레딧: 사진 속 빈 공간에 이름 등장 ── */
+  .ending{position:relative;padding:0;border:none;background:#000;cursor:pointer;overflow:hidden;}
+  .ending img{opacity:.85;}
+  .name-slot{
+    position:absolute;left:0;right:0;
+    top:42%;                 /* 문구 아래 빈 공간 위치 */
+    text-align:center;padding:0 22px;
+  }
+  .name-slot .sp{
+    font-family:"Cinzel",serif;font-size:11px;letter-spacing:.46em;
+    color:#8a7a76;margin-bottom:14px;opacity:0;
+  }
+  .name-slot .nm{
+    font-family:"Nanum Myeongjo",serif;font-weight:800;
+    font-size:clamp(28px,8vw,44px);color:#fff;word-break:keep-all;
+    opacity:0;filter:blur(8px);letter-spacing:.35em;
+    text-shadow:0 0 34px rgba(255,255,255,.4),0 0 70px rgba(200,16,46,.55);
+  }
+  .play .sp{animation:fadeIn .5s ease-out .1s forwards;}
+  .play .nm{animation:emerge 1.1s cubic-bezier(.2,.7,.3,1) .35s forwards;}
+  @keyframes fadeIn{to{opacity:1;}}
+  @keyframes emerge{
+    0%{opacity:0;filter:blur(8px);letter-spacing:.35em;}
+    100%{opacity:1;filter:blur(0);letter-spacing:.04em;}
+  }
+  .replay{
+    position:absolute;bottom:16px;left:0;right:0;text-align:center;
+    font-family:"Cinzel",serif;font-size:10px;letter-spacing:.3em;color:#453a38;
+  }
+
+  .end-msg{padding:56px 22px 40px;text-align:center;border-bottom:1px solid var(--line);}
+  .end-msg .th{font-family:"Cinzel",serif;font-size:16px;letter-spacing:.4em;color:var(--red);margin-bottom:18px;}
+  .end-msg p{font-family:"Nanum Myeongjo",serif;font-size:16px;line-height:2.1;}
+  .end-msg .fest{color:var(--mute);font-size:14px;margin-top:20px;font-family:"Noto Sans KR";}
+  footer{text-align:center;padding:34px 20px 46px;color:#4d4140;font-size:11px;letter-spacing:.24em;font-family:"Cinzel",serif;}
+
+  .toast{position:fixed;left:50%;bottom:34px;transform:translateX(-50%) translateY(20px);background:var(--red);color:#fff;padding:13px 26px;border-radius:3px;font-size:14px;opacity:0;pointer-events:none;transition:.28s;z-index:99;}
+  .toast.show{opacity:1;transform:translateX(-50%) translateY(0);}
+</style>
+</head>
+<body>
+<div class="wrap">
+
+  <header class="hero">
+    <img src="poster.jpg" alt="먹여 키운 것">
+    <div class="hero-cap">
+      <div class="studio">EST STUDIO PRESENTS</div>
+      <h1>먹여 키운 것</h1>
+      <div class="sub">OFFICIAL REWARD CLAIM</div>
+      <p>영화 제작에 함께해주셔서 감사합니다.</p>
+      <a class="btn" href="#claim">리워드 신청하기</a>
+    </div>
+  </header>
+
+  <section>
+    <div class="eyebrow">Support the film</div>
+    <h2>작은 후원이<br>한 편의 영화를 완성합니다<span class="en">The Hunger Below</span></h2>
+    <p class="lead">여러분의 후원은 촬영 장비 대여, 소품 제작, 세트장 대관 등<br>〈먹여 키운 것〉의 제작비로만 사용됩니다.</p>
+    <img class="shot" src="support.jpg" alt="연출의 말">
+  </section>
+
+  <section>
+    <div class="eyebrow">Key staff</div>
+    <h2>청덕괴담회 제작팀<br>전격 합류</h2>
+    <img class="shot" src="staff.jpg" alt="KEY STAFF" style="margin-top:24px">
+  </section>
+
+  <section>
+    <div class="eyebrow">Chapter 01</div>
+    <h2>FUNDING REWARD</h2>
+    <p class="lead">상위 리워드에는 해당 금액 이하의 모든 리워드가 포함됩니다.</p>
+    <img class="shot" src="reward.jpg" alt="리워드 안내">
+    <div class="eyebrow" style="margin-top:8px">Select your tier</div>
+    <h2 style="font-size:21px;margin-bottom:20px">후원 금액을 선택하면<br>받으실 리워드가 표시됩니다</h2>
+    <div class="tiers" id="tiers"></div>
+    <div class="result">
+      <div class="head" id="resultHead">YOUR REWARD</div>
+      <div id="resultBody"><p class="empty">위에서 후원 금액을 선택해주세요.</p></div>
+    </div>
+  </section>
+
+  <section>
+    <div class="eyebrow">Ending credit</div>
+    <h2>당신의 이름이<br>스크린에 남습니다</h2>
+    <p class="lead">엔딩 크레딧에 표기될 이름을 입력해보세요. (닉네임 · 익명 가능)</p>
+    <input class="input" id="nameIn" type="text" maxlength="20" placeholder="예) 문에녹 / MOON / 익명">
+    <div class="credit-box">
+      <div class="t">SPECIAL THANKS</div>
+      <div class="names">
+        김단하<br>정지환<br>
+        <span class="me" id="creditMe">YOUR NAME</span><br>
+        EST STUDIO
+      </div>
+    </div>
+  </section>
+
+  <section>
+    <div class="eyebrow">Process</div>
+    <h2>진행 절차</h2>
+    <ul class="steps" style="margin-top:26px">
+      <li><b>01 · 후원 접수</b>신청 폼 작성 완료</li>
+      <li><b>02 · 입금 확인</b>영업일 기준 1~2일 내 확인</li>
+      <li><b>03 · 리워드 제작</b>포토카드 · 키링 · 영상 제작</li>
+      <li><b>04 · 배송 준비</b>굿즈 포장 및 발송 준비</li>
+      <li><b>05 · 배송 완료</b>등록해주신 주소로 발송</li>
+    </ul>
+  </section>
+
+  <section id="claim">
+    <div class="eyebrow">How to support</div>
+    <h2>후원 방법</h2>
+    <p class="lead">아래 계좌로 입금하신 뒤, 신청 폼을 작성해주세요.</p>
+    <div class="acct">
+      <div class="bank" id="vBank">은행</div>
+      <div class="no" id="vNo">000-0000-0000</div>
+      <div class="holder" id="vHolder">예금주</div>
+    </div>
+    <button class="btn ghost" onclick="copyAccount()">📋 계좌번호 복사하기</button>
+    <p class="note">
+      · 입금자명은 <b>신청자 성함과 동일하게</b> 부탁드립니다.<br>
+      · 입금 후 반드시 아래 신청 폼을 작성해주셔야 리워드가 발송됩니다.<br>
+      · 폼 작성에는 <b>구글 로그인</b>이 필요합니다.
+    </p>
+    <a class="btn" id="formBtn" href="#" target="_blank" rel="noopener" style="margin-top:24px">
+      리워드 신청 폼 작성하기 →
+    </a>
+  </section>
+
+  <!-- 엔딩 크레딧 -->
+  <div class="ending" id="ending">
+    <img src="credit.jpg" alt="">
+    <div class="name-slot">
+      <div class="sp">SPECIAL THANKS</div>
+      <div class="nm" id="endName">YOUR NAME</div>
+    </div>
+    <div class="replay">TAP TO REPLAY</div>
+  </div>
+
+  <div class="end-msg">
+    <div class="th">THANK YOU</div>
+    <p>당신의 이름은 〈먹여 키운 것〉의<br>엔딩 크레딧에 기록됩니다.</p>
+    <p class="fest">〈먹여 키운 것〉은 2027년 영화제 출품에<br>도전할 예정입니다.</p>
+  </div>
+  <footer>EST STUDIO · 먹여 키운 것</footer>
+
+</div>
+
+<div class="toast" id="toast">복사되었습니다</div>
+
+<script>
+/* ══════════ 여기만 수정하세요 ══════════ */
+const FORM_URL = "https://forms.gle/여기에구글폼링크";
+const BANK     = "카카오뱅크";
+const ACCOUNT  = "3333-00-0000000";
+const HOLDER   = "김○○";
+/* ═══════════════════════════════════════ */
+
+const TIERS=[
+  {amt:3000, en:"SUPPORTER",       star:1, items:["엔딩크레딧 이름 박제"]},
+  {amt:5000, en:"COLLECTER",       star:2, items:["스틸컷 포토카드 1장","캐릭터 포토카드 1장"]},
+  {amt:10000,en:"MESSAGE VIDEO",   star:3, items:["출연진 축하 영상","소품 키링"]},
+  {amt:20000,en:"SPECIAL",         star:4, items:["배우 정지환 & 김단하 영상통화","엽서 1장"]},
+  {amt:30000,en:"THANK YOU VIDEO", star:5, items:["전 제작팀 감사영상","A3 포스터 2장"]},
+  {amt:50000,en:"LIMITED EDITION", star:6, items:["대본집","실제 촬영 소품"]}
+];
+
+document.getElementById('vBank').textContent=BANK;
+document.getElementById('vNo').textContent=ACCOUNT;
+document.getElementById('vHolder').textContent="예금주 "+HOLDER;
+document.getElementById('formBtn').href=FORM_URL;
+
+const box=document.getElementById('tiers');
+TIERS.forEach((t,idx)=>{
+  const el=document.createElement('div');
+  el.className='tier';
+  el.innerHTML='<span class="amt">'+t.amt.toLocaleString()+'<small>원</small></span>'
+             + '<span class="en">'+t.en+'</span>'
+             + '<span class="st">'+'★'.repeat(t.star)+'</span>';
+  el.onclick=()=>select(idx);
+  box.appendChild(el);
+});
+
+function select(idx){
+  document.querySelectorAll('.tier').forEach((e,i)=>e.classList.toggle('on',i<=idx));
+  const list=[];
+  for(let i=0;i<=idx;i++) TIERS[i].items.forEach(x=>list.push(x));
+  document.getElementById('resultHead').textContent=TIERS[idx].en+' · '+TIERS[idx].amt.toLocaleString()+'원';
+  document.getElementById('resultBody').innerHTML='<ul>'+list.map(x=>'<li>'+x+'</li>').join('')+'</ul>';
+}
+
+const nameIn=document.getElementById('nameIn');
+nameIn.addEventListener('input',()=>{
+  const v=nameIn.value.trim();
+  document.getElementById('creditMe').textContent = v==="" ? "YOUR NAME" : v;
+  document.getElementById('endName').textContent  = v==="" ? "YOUR NAME" : v;
+});
+
+/* 엔딩 크레딧 재생 */
+const ending=document.getElementById('ending');
+function playCredit(){
+  ending.classList.remove('play');
+  void ending.offsetWidth;
+  ending.classList.add('play');
+}
+new IntersectionObserver((es)=>{
+  es.forEach(e=>{ if(e.isIntersecting && !ending.classList.contains('play')) playCredit(); });
+},{threshold:.4}).observe(ending);
+ending.addEventListener('click',playCredit);
+
+function copyAccount(){
+  const txt=BANK+" "+ACCOUNT+" "+HOLDER;
+  if(navigator.clipboard&&window.isSecureContext){
+    navigator.clipboard.writeText(txt).then(showToast).catch(()=>fallback(txt));
+  }else fallback(txt);
+}
+function fallback(txt){
+  const ta=document.createElement('textarea');
+  ta.value=txt;ta.style.position='fixed';ta.style.opacity='0';
+  document.body.appendChild(ta);ta.select();
+  try{document.execCommand('copy');showToast();}catch(e){alert(txt);}
+  document.body.removeChild(ta);
+}
+function showToast(){
+  const t=document.getElementById('toast');
+  t.classList.add('show');
+  setTimeout(()=>t.classList.remove('show'),1600);
+}
+</script>
+</body>
+</html>
